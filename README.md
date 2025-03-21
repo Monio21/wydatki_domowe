@@ -1,20 +1,18 @@
 # Program do zarządzania wydatkami gospodarstwa domowego
 ## Opis Projektu
-Projekt to **System Zarządzania Budżetem** napisany w języku C++. Umożliwia użytkownikom zarządzanie i analizowanie miesięcznych oraz rocznych wydatków w różnych kategoriach.
+Program do zarządzania wydatkami gospodarstwa domowego umożliwia, na podstawie wczytanego pliku CSV, obliczenie rocznej sumy wydatków, jak i rocznych wydatków z poszczególnej kategorii. Wyposażony jest on  także w opcję obliczeń kwartalnych oraz możliwość dodania wydatków do każdej z kategorii na obecny miesiąc.
 
 ## Funkcjonalności
 
-- **Wczytywanie wydatków**: Wczytywanie danych o wydatkach z pliku CSV.
+- **Wczytywanie wydatków**: Wczytywanie danych o wydatkach z pliku **`szablon.csv`**.
 - **Obliczanie rocznych wydatków**: Obliczanie całkowitych rocznych wydatków oraz wydatków w poszczególnych kategoriach.
 - **Analiza kwartalna**: Analiza wydatków w każdym kwartale roku.
 - **Dodawanie nowych wydatków**: Dodawanie nowych wydatków do bieżącego miesiąca.
-- **Zapisywanie danych**: Zapisywanie zaktualizowanych danych o wydatkach do pliku CSV.
+- **Zapisywanie danych**: Zapisywanie zaktualizowanych danych o wydatkach do pliku **`wynik.csv`**.
 
 ## Struktura projektu
-.vscode/ .vscode/launch.json .vscode/settings.json .vscode/tasks.json lista.h main.cpp main.exe odczyt.h Operacje.h Singleton.h szablon.csv Wydatki.h wynik.csv wzkaznik_inteligentny.h zapis.h
 
-### Kluczowe pliki
-
+Projekt składa się z następujących plików:
 - **`main.cpp`**: Główny punkt wejścia aplikacji. Obsługuje interakcję z użytkownikiem i wywołuje różne operacje.
 - **`Operacje.h`**: Zawiera funkcje do obliczania rocznych i kwartalnych wydatków.
 - **`odczyt.h`**: Obsługuje wczytywanie danych o wydatkach z pliku CSV.
@@ -26,29 +24,52 @@ Projekt to **System Zarządzania Budżetem** napisany w języku C++. Umożliwia 
 - **`szablon.csv`**: Przykładowy plik CSV zawierający dane o wydatkach.
 - **`wynik.csv`**: Plik wyjściowy, w którym zapisywane są zaktualizowane dane o wydatkach.
 
-## Jak zbudować i uruchomić
+## Wymagania
 
-### Wymagania
+- **C++11** lub nowszy
+- **CMake** do budowania projektu
+- Kompilator zgodny z C++ (np. **g++**, **clang**)
 
-- **Kompilator C++**: Upewnij się, że masz zainstalowany kompilator C++ (np. `g++`).
-- **Visual Studio Code**: Zalecane IDE z zainstalowanym rozszerzeniem C++.
+## Budowanie i urochomianie
 
-### Budowanie
+Aby zbudować projekt, wykonaj następujące kroki:
 
-1. Otwórz projekt w Visual Studio Code.
-2. Użyj domyślnego zadania budowania:
-   - Naciśnij `Ctrl+Shift+B` lub przejdź do `Terminal > Run Build Task`.
-   - Projekt zostanie skompilowany, a plik wykonywalny zostanie wygenerowany.
+1. Sklonuj repozytorium:
+    ```sh
+    git clone https://github.com/Monio21/wydatki_domowe
+    cd wydatki_domowe
+    ```
 
-### Uruchamianie
+2. Stwórz katalog build i przejdź do niego:
+    ```sh
+    mkdir build
+    cd build
+    ```
 
-1. Uruchom program:
-   - Naciśnij `F5` lub przejdź do `Run > Start Debugging`.
-   - Program zostanie uruchomiony, a interakcja odbywa się w terminalu.
+3. Wygeneruj pliki make za pomocą CMake:
+    ```sh
+    cmake ..
+    ```
 
-### Przykładowe wejście
+4. Skompiluj projekt:
+    ```sh
+    make
+    ```
 
-Po uruchomieniu programu wprowadź liczbę odpowiadającą wybranej operacji:
-Oblicz roczna sume wydatkow
-Oblicz roczne wydatki na artykuly podstawowe ...
-Dodaj wydatki do biezacego miesiaca
+5. Uruchom program:
+    ```sh
+    ./wydatki_domowe
+    ```
+
+## Przykład użycia
+
+Po uruchomieniu programu wyświetla się lista dostępnych operacji.
+Po otrzymaniu wyniku należy nacisnąć **Enter** aby powrócić do możliwości wyboru operacji.
+
+## Autor
+
+- **Maciej Jerominek** 
+
+## Uwagi końcowe
+
+Jeśli masz pytania lub uwagi dotyczące projektu, proszę o kontakt przez GitHub Issues lub bezpośrednio przez e-mail.
