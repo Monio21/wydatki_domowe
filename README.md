@@ -36,7 +36,7 @@ Aby zbudować projekt, wykonaj następujące kroki:
 
 1. Sklonuj repozytorium:
     ```sh
-    git clone https://github.com/Monio21/wydatki_domowe
+    git clone https://github.com/Monio21/wydatki_domowe.git
     cd wydatki_domowe
     ```
 
